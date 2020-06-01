@@ -300,7 +300,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # dilate the thresholded image to fill in any holes, then find contours
     # on thresholded image
     thresh = cv2.dilate(thresh, None, iterations=2)
-    (_, cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    (cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
     # look for motion 
     motion_found = False
